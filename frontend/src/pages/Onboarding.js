@@ -216,4 +216,4 @@ const OnBoarding = () => {
         </>
     )
 }
-export default OnBoarding
+export default Onboarding
