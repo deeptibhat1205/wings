@@ -76,11 +76,12 @@ nav .nav-button:disabled {
 
 nav .logo-container {
     width: 170px;
+    height: 20px;
     margin: 15px;
 }
 
 nav .logo-container .logo {
-    width: 100%;
+    width: 50%;
 }
 
 /*-------- Home page --------*/

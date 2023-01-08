@@ -1,3 +1,4 @@
+import "../images/logo.png" 
 
 const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
   const handleClick = () => {
@@ -10,7 +11,7 @@ const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
       <div className="logo-container">
         <img
           className="logo"
-          src = "../images/logo.png"
+          src = "logo.png"
           alt="logo"
         />
       </div>
