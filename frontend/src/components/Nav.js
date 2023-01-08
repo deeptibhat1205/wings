@@ -10,7 +10,7 @@ const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
       <div className="logo-container">
         <img
           className="logo"
-          src = "https://imgur.com/78LBjZN"
+          src = "../images/logo.png"
           alt="logo"
         />
       </div>

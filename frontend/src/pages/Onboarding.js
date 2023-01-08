@@ -14,8 +14,9 @@ const Onboarding = () => {
         dob_year: "",
         show_gender: false,
         gender_identity: "man",
-        gender_interest: "woman",
+        company_interest: "servBased",
         url: "",
+        resume_url: "",
         about: "",
         matches: []
 
@@ -141,39 +142,49 @@ const Onboarding = () => {
 
                         <div className="multiple-input-container">
                             <input
-                                id="man-gender-interest"
+                                id="product-based-interest"
                                 type="radio"
-                                name="gender_interest"
-                                value="man"
+                                name="company_interest"
+                                value="prodBased"
                                 onChange={handleChange}
-                                checked={formData.gender_interest === "man"}
+                                checked={formData.company_interest=== "prodBased"}
                             />
-                            <label htmlFor="man-gender-interest">Man</label>
+                            <label htmlFor="product-based-interest">Product Based Company</label>
                             <input
-                                id="woman-gender-interest"
+                                id="service-based-interest"
                                 type="radio"
-                                name="gender_interest"
-                                value="woman"
+                                name="company_interest"
+                                value="servBased"
                                 onChange={handleChange}
-                                checked={formData.gender_interest === "woman"}
+                                checked={formData.company_interest === "servBased"}
                             />
-                            <label htmlFor="woman-gender-interest">Woman</label>
+                            <label htmlFor="service-based-interest">Service Based Company</label>
                             <input
-                                id="everyone-gender-interest"
+                                id="both-interest"
                                 type="radio"
-                                name="gender_interest"
-                                value="everyone"
+                                name="company_interest"
+                                value="both"
                                 onChange={handleChange}
-                                checked={formData.gender_interest === "everyone"}
+                                checked={formData.company_interest === "both"}
                             />
-                            <label htmlFor="everyone-gender-interest">Everyone</label>
+                            <label htmlFor="both-interest">Both</label>
 
                         </div>
+
+                        <label htmlFor="resume_url">Resume/CV</label>
+                        <input
+                            type="url"
+                            name="url-resume"
+                            id="url-resume"
+                            onChange={handleChange}
+                            required={true}
+                            placeholder="Add your resume link..."
+                        />
 
                         <label htmlFor="about">About me</label>
                         <input
                             id="about"
-                            type="text"
+                            type="textarea"
                             name="about"
                             required={true}
                             placeholder="I like long walks..."
@@ -197,8 +208,7 @@ const Onboarding = () => {
                         <div className="photo-container">
                             {formData.url && <img src={formData.url} alt="profile pic preview"/>}
                         </div>
-
-
+                        
                     </section>
 
                 </form>
