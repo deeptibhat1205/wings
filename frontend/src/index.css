@@ -81,7 +81,8 @@ nav .logo-container {
 }
 
 nav .logo-container .logo {
-    width: 50%;
+    width: 150%;
+    margin: 15px;
 }
 
 /*-------- Home page --------*/

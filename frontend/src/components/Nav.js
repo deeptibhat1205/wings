@@ -1,4 +1,4 @@
-import "../images/logo.png" 
+import "../images/logo.png"
 
 const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
   const handleClick = () => {

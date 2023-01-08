@@ -2,12 +2,15 @@ import Nav from '../components/Nav'
 import AuthModal from "../components/AuthModal.js"
 import {useState} from 'react'
 import {useCookies} from "react-cookie"
+import AuthModalCompanies from "../components/AuthModalCompanies.js"
+import OnboardingCompanies from './OnboardingCompanies'
 
 const Home = () => {
     const [showModal, setShowModal] = useState(false)
     const [isSignUp, setIsSignUp] = useState(true)
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const authToken = cookies.AuthToken
+    const authTokenCompanies = cookies.AuthTokencompany
 
     const handleClick = () => {
         if (authToken) {
@@ -20,10 +23,22 @@ const Home = () => {
         setIsSignUp(true)
     }
 
+    const handleClickCompanies = () => {
+        if (authTokenCompanies) {
+            removeCookie('CompanyId', cookies.CompanyId)
+            removeCookie('AuthTokenCompany', cookies.AuthTokenCompany)
+            window.location.reload()
+            return
+        }
+        setShowModal(true)
+        setIsSignUp(true)
+    }
+
     return (
         <div className="overlay">
             <Nav
                 authToken={authToken}
+                authTokenCompanies={authTokenCompanies}
                 minimal={false}
                 setShowModal={setShowModal}
                 showModal={showModal}
@@ -31,12 +46,12 @@ const Home = () => {
             />
             <div className="home">
                 <h1 className="primary-title">Wings®</h1>
-                <button className="primary-button" onClick={handleClick}>
+                <button className="primary-button"  onClick={handleClick}>
                     {authToken ? 'Signout' : 'For Users'}
                 </button>
                 <p> </p>
                 <button className="primary-button" onClick={null}>
-                    {authToken ? 'Signout' : 'For Companies'}
+                    {authTokenCompanies ? 'Signout' : 'For Companies'}
                 </button>
 
 
@@ -46,6 +61,6 @@ const Home = () => {
             </div>
         </div>
     )
-    
+
 }
 export default Home
