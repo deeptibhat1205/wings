@@ -137,16 +137,6 @@ const Onboarding = () => {
                             <label htmlFor="more-gender-identity">More</label>
                         </div>
 
-                        <label htmlFor="show-gender">Show Gender on my Profile</label>
-
-                        <input
-                            id="show-gender"
-                            type="checkbox"
-                            name="show_gender"
-                            onChange={handleChange}
-                            checked={formData.show_gender}
-                        />
-
                         <label>Show Me</label>
 
                         <div className="multiple-input-container">
