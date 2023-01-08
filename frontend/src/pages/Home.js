@@ -32,7 +32,11 @@ const Home = () => {
             <div className="home">
                 <h1 className="primary-title">Wings®</h1>
                 <button className="primary-button" onClick={handleClick}>
-                    {authToken ? 'Signout' : 'Create Account'}
+                    {authToken ? 'Signout' : 'For Users'}
+                </button>
+                <p> </p>
+                <button className="primary-button" onClick={null}>
+                    {authToken ? 'Signout' : 'For Companies'}
                 </button>
 
 

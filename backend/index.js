@@ -199,6 +199,7 @@ app.put('/user', async (req, res) => {
                 gender_identity: formData.gender_identity,
                 gender_interest: formData.gender_interest,
                 url: formData.url,
+                resume_url: formData.resume_url,
                 about: formData.about,
                 matches: formData.matches
             },
