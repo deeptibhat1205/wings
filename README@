@@ -1,0 +1,13 @@
+Tech Used
+NodeJs - Build the server.
+ReactJs - A JavaScript library for building user interfaces
+React Router Dom - DOM bindings
+React Native - Native Development.
+React Navigation - Routing and navigation for your React Native apps.
+React Native Linear Gradient - A Linear Gradient component for react-native
+MongoDB - NoSQL Cluster.
+Express - Router of the Application.
+Mongoose - Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+socket.io - Socket.IO is a library that enables real-time.
+CORS - Cross-origin Resource Sharing.
+Axios - Promise based HTTP client for the browser and NodeJs.
