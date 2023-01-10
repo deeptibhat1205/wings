@@ -7,7 +7,9 @@ import OnboardingCompanies from './OnboardingCompanies'
 
 const Home = () => {
     const [showModal, setShowModal] = useState(false)
+    const [showModalCompanies, setShowModalCompanies] = useState(false)
     const [isSignUp, setIsSignUp] = useState(true)
+    const [isSignUpCompanies, setIsSignUpCompanies] = useState(true)
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const authToken = cookies.AuthToken
     const authTokenCompanies = cookies.AuthTokencompany
@@ -30,8 +32,8 @@ const Home = () => {
             window.location.reload()
             return
         }
-        setShowModal(true)
-        setIsSignUp(true)
+        setShowModalCompanies(true)
+        setIsSignUpCompanies(true)
     }
 
     return (
@@ -41,8 +43,11 @@ const Home = () => {
                 authTokenCompanies={authTokenCompanies}
                 minimal={false}
                 setShowModal={setShowModal}
+                setShowModalCompanies={setShowModalCompanies}
                 showModal={showModal}
+                showModalCompanies={showModalCompanies}
                 setIsSignUp={setIsSignUp}
+                setIsSignUpCompanies={setIsSignUpCompanies}
             />
             <div className="home">
                 <h1 className="primary-title">Wings®</h1>
@@ -50,13 +55,15 @@ const Home = () => {
                     {authToken ? 'Signout' : 'For Users'}
                 </button>
                 <p> </p>
-                <button className="primary-button" onClick={null}>
+                <button className="primary-button" onClick={handleClickCompanies}>
                     {authTokenCompanies ? 'Signout' : 'For Companies'}
                 </button>
 
 
                 {showModal && (
                     <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
+                )}
+                {showModalCompanies && (<AuthModalCompanies setShowModalCompanies={setShowModalCompanies} isSignUpCompanies={isSignUpCompanies}/>
                 )}
             </div>
         </div>

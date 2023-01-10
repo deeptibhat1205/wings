@@ -22,16 +22,16 @@ const OnboardingCompanies = () => {
         console.log("Submitted")
         ec.preventDefault()
         try {
-            const response = await axios.put('http://localhost:8000/user', {formData})
+            const response = await axios.put('http://localhost:8000/companies', {formData})
             console.log(response)
             const success = response.status === 200
-            if (success) navigate('/dashboard')
+            if (success) navigate('/dashboard-companies')
         } catch (err) {
             console.log(err)
         }
         
     }
-    const handleChange = (e) => {
+    const handleChangeCompanies = (e) => {
         console.log('e', e)
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
         const name = e.target.name
@@ -46,9 +46,9 @@ const OnboardingCompanies = () => {
         <>
             <Nav
                 minimal={true}
-                setShowModal={() => {
+                setShowModalCompanies={() => {
                 }}
-                showModal={false}
+                showModalCompanies={false}
             />
 
             <div className="onboarding-companies">
@@ -64,7 +64,7 @@ const OnboardingCompanies = () => {
                             placeholder="Company Name"
                             required={true}
                             value={formData.first_name}
-                            onChange={handleChange}
+                            onChange={handleChangeCompanies}
                         />
 
                         <label>Company Base</label>
@@ -75,7 +75,7 @@ const OnboardingCompanies = () => {
                                 type="radio"
                                 name="company-base"
                                 value="prodBased"
-                                onChange={handleChange}
+                                onChange={handleChangeCompanies}
                                 checked={formData.company_base=== "prodBased"}
                             />
                             <label htmlFor="company-base">Product Based Company</label>
@@ -84,7 +84,7 @@ const OnboardingCompanies = () => {
                                 type="radio"
                                 name="company-base"
                                 value="servBased"
-                                onChange={handleChange}
+                                onChange={handleChangeCompanies}
                                 checked={formData.company_base === "servBased"}
                             />
                             <label htmlFor="service-based-interest">Service Based Company</label>
@@ -93,7 +93,7 @@ const OnboardingCompanies = () => {
                                 type="radio"
                                 name="company-base"
                                 value="both"
-                                onChange={handleChange}
+                                onChange={handleChangeCompanies}
                                 checked={formData.company_base === "both"}
                             />
                             <label htmlFor="both-interest">Both</label>
@@ -105,7 +105,7 @@ const OnboardingCompanies = () => {
                             type="url"
                             name="job-offer"
                             id="job-offer"
-                            onChange={handleChange}
+                            onChange={handleChangeCompanies}
                             required={true}
                             placeholder="Add the job offer link ..."
                         />
@@ -118,7 +118,7 @@ const OnboardingCompanies = () => {
                             required={true}
                             placeholder="8 hour deskjob"
                             value={formData.about}
-                            onChange={handleChange}
+                            onChange={handleChangeCompanies}
                         />
 
                         <input type="submit"/>

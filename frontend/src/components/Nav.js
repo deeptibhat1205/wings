@@ -1,9 +1,13 @@
 import "../images/logo.png"
 
-const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
+const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp, setShowModalCompanies, setIsSignUpCompanies, authTokenCompanies }) => {
   const handleClick = () => {
     setShowModal(true);
     setIsSignUp(false);
+  };
+  const handleClickCompanies = () => {
+    setShowModalCompanies(true);
+    setIsSignUpCompanies(false);
   };
 
   return (

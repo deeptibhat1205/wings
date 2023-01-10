@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 
-const AuthModalCompanies = ({ setShowModal,  isSignUp }) => {
+const AuthModalCompanies = ({ setShowModalCompanies,  isSignUpCompanies }) => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const [confirmPassword, setConfirmPassword] = useState(null)
@@ -15,26 +15,26 @@ const AuthModalCompanies = ({ setShowModal,  isSignUp }) => {
     console.log(email, password, confirmPassword)
 
     const handleClickCompanies = () => {
-        setShowModal(false)
+        setShowModalCompanies(false)
     }
 
     const handleSubmitCompanies = async (e) => {
         e.preventDefault()
  
         try {
-            if (isSignUp && (password !== confirmPassword)) {
+            if (isSignUpCompanies && (password !== confirmPassword)) {
                 setError('Passwords need to match!')
                 return
             }
 
-            const response = await axios.post(`http://localhost:8000/${isSignUp ? 'signup' : 'login'}`, { email, password })
+            const response = await axios.post(`http://localhost:8000/${isSignUpCompanies ? 'signup' : 'login'}`, { email, password })
 
             setCookie('AuthTokenCompany', response.data.token)
             setCookie('CompanyID', response.data.userId)
 
             const success = response.status === 201
-            if (success && isSignUp) navigate ('/onboarding-companies')
-            if (success && !isSignUp) navigate ('/dashboard')
+            if (success && isSignUpCompanies) navigate ('/onboarding-companies')
+            if (success && !isSignUpCompanies) navigate ('/dashboard')
 
             window.location.reload()
 
@@ -47,14 +47,14 @@ const AuthModalCompanies = ({ setShowModal,  isSignUp }) => {
             <div className="auth-modal">
                 <div className="close-icon" onClick={handleClickCompanies}>ⓧ</div>
     
-                <h2>{isSignUp ? 'CREATE ACCOUNT': 'LOG IN'}</h2>
+                <h2>{isSignUpCompanies ? 'CREATE ACCOUNT': 'LOG IN'}</h2>
                 <p>By clicking Log In, you agree to our terms. Learn how we process your data in our Privacy Policy and Cookie Policy.</p>
                 <form onSubmit={handleSubmitCompanies}>
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="email"
+                        placeholder="company-email"
                         required={true}
                         onChange={(e) => setEmail(e.target.value)}
                     />
@@ -66,7 +66,7 @@ const AuthModalCompanies = ({ setShowModal,  isSignUp }) => {
                         required={true}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    {isSignUp && <input
+                    {isSignUpCompanies && <input
                         type="password"
                         id="password-check"
                         name="password-check"
