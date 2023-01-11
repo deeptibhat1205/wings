@@ -63,12 +63,12 @@ nav {
 nav .nav-button {
     color: rgb(254, 48, 114);
     background-color: rgb(255, 255, 255);
-    font-size: 24px;
+    font-size: 25px;
     padding: 10px 20px;
     border-radius: 27px;
     border: none;
-    margin: 25px;
-    width: 132px;
+    margin: 23px;
+    width: 122px;
 }
 
 nav .nav-button:disabled {
@@ -83,8 +83,8 @@ nav .logo-container {
 }
 
 nav .logo-container .logo {
-    width: 175%;
-    margin: 7px;
+    width: 154%;
+    margin: 11px;
 }
 
 /*-------- Home page --------*/
