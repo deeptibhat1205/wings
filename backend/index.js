@@ -30,17 +30,17 @@ app.post('/signup', async (req, res) => {
         await client.connect()
         const database = client.db('app-data')
         const users = database.collection('users')
-        // const companies = database.collection('comapnies')
+        const companies = database.collection('comapnies')
         const existingUser = await users.findOne({email})
-        // const existingCompany = await companies.findOne({email})
+        const existingCompany = await companies.findOne({email})
 
         if (existingUser) {
             return res.status(409).send('User already exists. Please login')
         }
         
-        // if(existingCompany){
-        //     return res.status(409).send('Company already registered.')
-        // }
+         if(existingCompany){
+             return res.status(409).send('Company already registered.')
+        }
         
         const sanitizedEmail = email.toLowerCase()
 
