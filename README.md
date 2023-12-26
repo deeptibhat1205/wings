@@ -1,3 +1,5 @@
+## Wings
+
 WINGS is an initiative that we took to empower women in terms of employment. Dure to the mass employment of male wmploys women aren't able to get their desired job. Sometimes they actually don’t know where to apply for the job. On the other hand , new policies of companies suggest equal ratio for male and females, but they also don’t know how to reach out to women employees. 
 
 To solve this problem, we have created a platform where companies who want to hire female candidates and women who want a job can meet. This is what our project does. It essentially creates a platform where the interaction between the companies and women are improved. 
@@ -12,4 +14,10 @@ After this if any role matches with the CV of the employee and needs of the comp
 Companies after registration will find CV of different employees (there resume with a profile picture).If they would feel the employee perfect for the job they can offer them or then take the talks ahead.
 
 “Wings” as the name suggest will help women empower in their specific field of interest and give them wings to fly independently in their life without any support.
+
+## Tech Stack
+
+**Client:** ReactJs, CSS, HTML
+
+**Server:** NodeJs, MongoDB, Express, Mongoose
 
