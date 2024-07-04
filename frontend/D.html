@@ -58,3 +58,42 @@ Dashboard, new item, freestyle project, configure, scm (use .py file in repo), b
 *if none is selected the command gets executed without Git
 *build execute windows batch command
 *go to plugin and install slack plugin (download slack on system too)
+2 times commit
+git reset --soft HEAD~1 (undo a commit)
+git log --oneline
+git reset --hard 14922b0 (commit id shown after oneline) (deletes file changes)
+
+terminal
+mkdir demo
+cd demo
+echo 'bonjour" > file2.txt
+git add .
+git branch (get to know the branch)
+git checkout -b f1
+make changes to file, add and commit
+git checkout main
+add changes to file in main branch, add and commit
+git merge f1 (conflict arises) (resolve it)
+
+echo "hi" > file.txt (add)
+echo "hi" >> file.txt (append)
+
+Docker
+sample.java
+class sample {
+    public static void main(String args[]) {
+        System.out.println("Hello World!");
+    }
+}
+java --version
+javac sample.java
+java sample
+
+create "Dockerfile"
+FROM openjdk
+WORKDIR /app
+COPY . /app
+RUN javac sample.java
+CMD ["java", "sample"]
+docker buildx build C:\Users\student\Desktop\dee\demo
+docker run ca58d3ab9c8f3a1665218359605bd42d68a4fbc164c645d17769564daee60fb8 (from sha256)
