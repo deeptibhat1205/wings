@@ -1,0 +1,60 @@
+code . -> takes you to VSCode
+create file called - "Dockerfile"
+
+FROM OpenJDK 
+WORKDIR /app
+COPY . /app
+RUN ["javac", "sample.java"]
+CMD ["java", "sample"]
+Copy from current working directory into image
+
+create sample.java file
+class sample {
+    public static void mian(String args[]) {
+        System.out.println("VVCE Mysore");
+    }
+}
+
+turn on Docker desktop
+docker build -t myapp . 
+(myapp is image name)
+docker run -d --name myapp_container myapp
+
+Jenkins - new item - freestyle project - python26
+Poll SCM (* * * * *)
+execute windows batch command
+python run.py (create file in he repo)
+
+In VSCode terminal
+file.txt in master branch
+git init
+git add .
+git commit -m "add1"
+
+git branch main or git checkout -b main
+git branch
+got branch main
+
+make changes in file
+git add  .
+git diff master
+git merge master (already up to date then change again)
+
+after change
+git add .
+git commit -m "city added"
+git merge main
+git commit -m 'merge"
+
+___________________________________________________________
+
+(if direct execution doesn't work)
+GitHub - Setting > Developer Settings > Personal Access Tokens > Tokens(classic) > Generate new token (general use) > click all checkboxes and generate token and copy it into a text file
+
+Jenkins > Manage Jenkins > credentials > system and click on global > Ad credential under global credential > kind: secret text, secret - token
+
+Dashboard, new item, freestyle project, configure, scm (use .py file in repo), branch, poll scm and 5 * (* * * * *)(run everytime)
+
+*if none is selected the command gets executed without Git
+*build execute windows batch command
+*go to plugin and install slack plugin (download slack on system too)
